@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+const now = new Date();
+
+console.log("Full Date:", now);
+console.log("Year:", now.getFullYear());
+console.log("Month:", now.getMonth() + 1); // 0-based
+console.log("Date:", now.getDate());
+console.log("Hours:", now.getHours());
+console.log("Minutes:", now.getMinutes());
+console.log("Seconds:", now.getSeconds());
+
+//🔹 Date Format (MM/DD vs DD/MM)
+const date = new Date();
+
+
+// MM/DD/YYYY
+let usFormat = (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear();
+
+// DD/MM/YYYY
+let indiaFormat = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+
+console.log("US Format:", usFormat);
+console.log("India Format:", indiaFormat);
+
+
+// 🔹 Add & Subtract Dates
+// const today = new Date();
+
+// Add 5 days
+// let futureDate = new Date();
+// futureDate.setDate(today.getDate() + 5);
+
+// Subtract 3 days
+// let pastDate = new Date();
+// pastDate.setDate(today.getDate() - 3);
+
+
+    </script>
+</body>
+</html>
