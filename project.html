@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Parul Login</title>
+
+    <style>
+        body {
+            background-image: url('parulimg.jfif');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            font-family: Arial;
+        }
+
+        fieldset {
+            width: 400px;
+            margin: 100px auto;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body onload="pageLoaded()">
+
+    <fieldset>
+        <legend onmouseover="hoverTitle(this)" onmouseout="normalTitle(this)">
+            PARUL LOGIN
+        </legend>
+
+        <form onsubmit="return validateLogin()">
+
+            USERNAME :
+            <input type="text" id="username"
+                   onfocus="focusField(this)"
+                   onblur="blurField(this)"
+                   onkeyup="showLength(this)">
+            <span id="msg"></span>
+            <br><br>
+
+            PASSWORD :
+            <input type="password" id="password"
+                   onfocus="focusField(this)"
+                   onblur="blurField(this)">
+            <br><br>
+
+            GENDER :
+            <input type="radio" name="gender" value="MALE"> MALE
+            <input type="radio" name="gender" value="FEMALE"> FEMALE
+            <br><br>
+
+            <button type="submit" onclick="buttonClick()">
+                LOGIN
+            </button>
+
+        </form>
+    </fieldset>
+
+<script>
+
+// 🔹 onload
+function pageLoaded(){
+    alert("Login Page Loaded");
+}
+
+// 🔹 onfocus
+function focusField(el){
+    el.style.background = "lightblue";
+}
+
+// 🔹 onblur
+function blurField(el){
+    el.style.background = "white";
+}
+
+// 🔹 onkeyup
+function showLength(el){
+    document.getElementById("msg").innerText =
+        "Length: " + el.value.length;
+}
+
+// 🔹 onclick
+function buttonClick(){
+    console.log("Login button clicked");
+}
+
+// 🔹 hover effects
+function hoverTitle(el){
+    el.style.color = "red";
+}
+
+function normalTitle(el){
+    el.style.color = "black";
+}
+
+// 🔹 validation
+function validateLogin(){
+    let user = document.getElementById("username").value;
+    let pass = document.getElementById("password").value;
+
+    if(user.trim() === ""){
+        alert("Username required");
+        return false;
+    }
+
+    if(pass.trim() === ""){
+        alert("Password required");
+        return false;
+    }
+
+    alert("Welcome to PARUL");
+    return true;
+}
+
+</script>
+
+</body>
+</html>
